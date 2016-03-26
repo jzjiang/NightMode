@@ -1,5 +1,6 @@
 var myCanvas;
 var canvasContainer;
+var skeletons  = [];
 
 _ini();
 
@@ -57,35 +58,51 @@ function _ini(){
 
 		// add spooky skeleton code
 		$(document).ready(function(){
-			randomlyMoveImage();
+			//randomlyMoveImage();
 		});
-
-
-		function randomlyMoveImage(){
-			var width = $(document).width()-500;
-			var height = $(document).height()-200;
-			var x = Math.floor((Math.random() * width) + 1);
-			var y = Math.floor((Math.random() * height) + 1);
-
-
-			$("#spooky>img").animate({
-
-				left: x,
-				top: y
-			}, 0, function() {
-			// Animation complete.
-					});
-
-		setTimeout(randomlyMoveImage, 3000);
-		}
-
 
 		var div = document.createElement("div");
 		div.id = "spooky";
-		var image = document.createElement("img");
-		image.src = chrome.extension.getURL('dancing-skeleton.gif');
-		div.appendChild(image);
-		document.body.appendChild(div);
+		for (var i = 0; i < 5; i++){
+			var skeleton = document.createElement("img");
+			skeleton.src = chrome.extension.getURL('dancing-skeleton.gif');
+			skeleton.id = "skeleton" + i;
+			skeletons.push(skeleton);
+			div.appendChild(skeleton);
+			console.log(skeleton);
+		}
+			document.body.appendChild(div);
+			console.log("help");
+			
+		
+		
+		function randomlyMoveImage(){
+			var width = $(document).width()-500;
+			var height = $(document).height()-200;
+			
+			console.log("hot thunder");
+			console.log($("#spooky"));
+			
+			for (var i = 0; i < 5; i++){
+				console.log("THIS IS REALLY I: " + i);
+				var x = Math.floor((Math.random() * width) + 1);
+				var y = Math.floor((Math.random() * height) + 1);
+				
+				console.log("dis mah image pls")
+				console.log($("#spooky").children()[i]);
+
+				$("#skeleton" + i).animate({
+					left: x,
+					top: y
+				}, 0, function() { 
+				console.log("i: "+ i +" x: " + x + " y: "+ y);
+				console.log("animating dawg");
+				// Animation complete.
+						});
+			}
+		setTimeout(randomlyMoveImage, 3000);
+		}
+		
 
 		// draw a circle where the mouse is
 		// cursor shit
@@ -107,6 +124,8 @@ function _ini(){
 				clearArc(context, e.pageX, e.pageY + 10, 100);
 
 		});
+		
+		randomlyMoveImage();
 
     }
 }
