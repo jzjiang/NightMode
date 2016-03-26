@@ -43,7 +43,7 @@ function _ini(){
 			}
 
 			var context=myCanvas.getContext('2d');
-			context.globalAlpha = 0.5;
+			context.globalAlpha = 1;
 			context.fillStyle = "#000";
 
 			context.fillRect(0,0, myCanvas.width, myCanvas.height);
@@ -82,7 +82,6 @@ function _ini(){
 
 		var div = document.createElement("div");
 		div.id = "spooky";
-
 		var image = document.createElement("img");
 		image.src = chrome.extension.getURL('dancing-skeleton.gif');
 		div.appendChild(image);
@@ -100,7 +99,7 @@ function _ini(){
 
 		$(document).mousemove(function(e)
 		{
-				context.globalAlpha = 0.5;
+				context.globalAlpha = 1;
 				context.fillStyle = "#000";
 				context.fillRect(0,0, myCanvas.width, myCanvas.height);
 
