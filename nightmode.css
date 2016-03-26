@@ -1,0 +1,29 @@
+#myCanvas {
+  pointer-events: none;
+}
+
+#canvasContainer{
+  pointer-events: none;
+}
+
+#spooky img{
+   position: absolute;
+   width: 100px;
+   height: 75px;
+ }
+
+ #spooky{
+   pointer-events: none;
+   width: 100%;
+   height: 100%;
+   position:fixed;
+   top:0;
+   left:0;
+   z-index = 10000000;
+}
+
+#lightbulb{
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
