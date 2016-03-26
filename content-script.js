@@ -58,7 +58,7 @@ function _ini(){
 
 		// add spooky skeleton code
 		$(document).ready(function(){
-			//randomlyMoveImage();
+			randomlyMoveImage();
 		});
 
 		var div = document.createElement("div");
@@ -124,8 +124,6 @@ function _ini(){
 				clearArc(context, e.pageX, e.pageY + 10, 100);
 
 		});
-		
-		randomlyMoveImage();
 
     }
 }
