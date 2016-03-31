@@ -3,12 +3,12 @@
   "name": "Night Mode",
   "description": "beware the spooky night!!",
   "version": "1.0",
-
+  
   "web_accessible_resources": ["dancing-skeleton.gif", "lightbulb.png"],
 
   "browser_action": {
     "default_icon": "icon.png",
-	"default_title": "4 the adventurous"
+	  "default_title": "4 the adventurous"
   },
 
   "content_scripts": [
